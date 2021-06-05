@@ -1,0 +1,176 @@
+.header {
+	align-items: flex-start;
+	background-image: url('../../images/image-hero-desktop.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	min-height: 18.5rem;
+	padding-top: 2rem;
+	position: relative;
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+
+		&__burger-btn,
+		&__app-logo {
+			z-index: 60;
+		}
+
+		&__burger-btn {
+			height: 1rem;
+			position: relative;
+			width: 1rem;
+
+			span,
+			&::after,
+			&::before {
+				content: '';
+				display: inline-block;
+				background-color: $white;
+				height: 3px;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				width: 100%;
+				transition: all 0.6s;
+			}
+
+			&::after {
+				transform: translateY(0);
+				top: 0;
+			}
+
+			&::before {
+				transform: translateY(-100%);
+				top: 100%;
+			}
+
+			&.is-active {
+				span {
+					transform: translateX(-100%);
+					opacity: 0;
+				}
+
+				&::after {
+					top: 50%;
+					transform: translateY(-50%) rotate(-225deg);
+				}
+
+				&::before {
+					top: 50%;
+					transform: translateY(-50%) rotate(225deg);
+				}
+			}
+		}
+
+		&__menu-overlay {
+			background-image: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.4) 10%,
+				transparent
+			);
+			animation: fadeIn 0.3s forwards;
+			display: none;
+			height: 100vh;
+			left: 0;
+			position: fixed;
+			top: 0;
+			z-index: 50;
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 1;
+				}
+			}
+
+			@keyframes fadeOut {
+				from {
+					opacity: 1;
+				}
+
+				to {
+					opacity: 0;
+				}
+			}
+
+			&.is-active {
+				display: block;
+			}
+
+			&.is-closed {
+				display: block;
+				animation-name: fadeOut;
+			}
+
+			&.is-closed.display-none {
+				display: none;
+			}
+		}
+
+		&__menu {
+			margin: 0 auto;
+			margin-top: 86px;
+
+			&__item {
+				padding: 26px;
+				border-bottom: 1px solid $lighten-gray;
+				font-size: 1.2rem;
+				font-weight: $font-medium;
+			}
+
+			&__item:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+
+	@media only screen and (min-width: map-get($breakpoints, 'small')) {
+		&__nav {
+			width: calc(100% - 21.65%);
+			max-width: none;
+
+			&__menu-overlay {
+				&,
+				&.is-closed.display-none {
+					display: block;
+					animation-name: fadeIn;
+					position: static;
+					background-image: none;
+					height: auto;
+					width: auto;
+				}
+			}
+
+			&__menu {
+				display: flex;
+				background: none;
+				margin: 0;
+				max-width: 100%;
+				width: 100%;
+
+				&__item {
+					border: none;
+					padding: 0;
+					margin-right: 24px;
+					color: $white;
+				}
+
+				&__item:last-child {
+					margin-right: 0;
+				}
+			}
+
+			&__burger-btn {
+				display: none;
+			}
+		}
+	}
+}

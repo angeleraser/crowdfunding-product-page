@@ -1,0 +1,28 @@
+.back-project-dialog {
+	font-family: $font-commisioner;
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 2.5rem;
+
+		&__title {
+			color: $black;
+			font-weight: $font-bold;
+			font-size: 1.6rem;
+			margin-bottom: 0.4rem;
+		}
+
+		&__description {
+			margin: 1.2rem 0 0;
+			color: $lighten-gray;
+			line-height: 1.7;
+		}
+	}
+
+	&__reward-list {
+		.reward-package-edit:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+}

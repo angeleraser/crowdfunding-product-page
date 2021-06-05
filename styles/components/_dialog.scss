@@ -1,0 +1,148 @@
+.dialog {
+	border-radius: 0 !important;
+	bottom: 0px;
+	display: flex;
+	height: 100vh;
+	left: 0px;
+	max-height: 100vh;
+	max-width: 100vw;
+	min-height: 100vh;
+	min-width: 100vw;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	width: 100vw;
+	z-index: 6000;
+
+	&__overlay {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: flex;
+		background-color: rgba(0, 0, 0, 0.4);
+		height: 100%;
+		width: 100%;
+		padding: 24px;
+		animation: 0.5s forwards;
+
+		&__body {
+			align-items: center;
+			animation-delay: 0.15s;
+			animation: 0.4s forwards;
+			display: flex;
+			height: 100%;
+			justify-content: center;
+			margin: auto;
+			max-height: calc(100vh - 48px);
+			max-width: 728px;
+			min-height: 0px;
+			overflow: hidden;
+			position: relative;
+			transform: scale(0);
+			width: calc(100% + 17px);
+
+			&__close-btn {
+				position: absolute;
+				top: 24px;
+				right: 26px;
+				z-index: 10;
+
+				svg path {
+					fill: $dark-gray;
+					transition: 0.3s all;
+				}
+
+				&:hover svg path {
+					fill: $black;
+				}
+			}
+
+			&__layout {
+				max-height: 100%;
+				min-height: 0px;
+				overflow: auto;
+				position: relative;
+
+				/* width */
+				&::-webkit-scrollbar {
+					width: 10px;
+				}
+
+				/* Track */
+				&::-webkit-scrollbar-track {
+					background: $white-secondary;
+					border-top-right-radius: 12px;
+					border-bottom-right-radius: 12px;
+				}
+
+				/* Handle */
+				&::-webkit-scrollbar-thumb {
+					background: $moderate-cyan;
+				}
+
+				&__content {
+					min-height: 0px;
+					min-width: 0px;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	&--is-open {
+		.dialog__overlay {
+			animation-name: fadeIn;
+
+			&__body {
+				animation-name: scaleUp;
+
+				@keyframes scaleUp {
+					from {
+						transform: scale(0);
+					}
+					to {
+						transform: scale(1);
+					}
+				}
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&--is-closed {
+		.dialog__overlay {
+			animation-name: fadeOut;
+
+			@keyframes fadeOut {
+				100% {
+					opacity: 0;
+				}
+			}
+
+			&__body {
+				animation-name: scaleDown;
+				animation-delay: 0ms;
+
+				@keyframes scaleDown {
+					from {
+						transform: scale(1);
+					}
+
+					to {
+						transform: scale(0);
+					}
+				}
+			}
+		}
+	}
+}

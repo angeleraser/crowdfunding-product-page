@@ -1,0 +1,42 @@
+.bookmark-btn {
+	display: flex;
+	position: relative;
+
+	.icon-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 10;
+	}
+
+	.text-btn {
+		display: none;
+	}
+
+	&--is-bookmarked {
+		.btn {
+			color: $dark-cyan;
+		}
+
+		.icon-btn {
+			background-color: $dark-cyan;
+		}
+	}
+
+	@media only screen and (min-width: map-get($breakpoints, 'small')) {
+		min-width: 164px;
+
+		.icon-btn {
+			position: absolute;
+		}
+
+		.text-btn {
+			display: inline-flex;
+			position: absolute;
+			right: 0;
+			width: 100%;
+			text-align: right;
+			justify-content: flex-end;
+		}
+	}
+}

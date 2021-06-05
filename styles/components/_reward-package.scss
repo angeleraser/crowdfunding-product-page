@@ -1,0 +1,73 @@
+.reward-package {
+	background-color: $white;
+	border-radius: 8px;
+	border: 1px solid lighten($color: $dark-gray, $amount: 40%);
+	padding: 25px;
+
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
+
+		h3 {
+			color: $black;
+			font-weight: $font-bold;
+			margin-bottom: 0.4rem;
+			margin-right: 1rem;
+		}
+
+		span {
+			color: $moderate-cyan;
+			font-weight: $font-medium;
+		}
+	}
+
+	&__description {
+		color: $lighten-gray;
+		line-height: 1.7;
+		margin: 26px 0;
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		width: 100%;
+
+		&__reward-remaining {
+			display: flex;
+			align-items: center;
+			margin-right: 1rem;
+			margin-bottom: 2rem;
+
+			@media only screen and (min-width: map-get($breakpoints, 'extra-small')) {
+				margin-bottom: 0;
+			}
+
+			&__count {
+				color: $black;
+				font-weight: $font-bold;
+				font-size: 1.8rem;
+				margin-right: 0.6rem;
+				line-height: 0;
+			}
+
+			span {
+				color: $lighten-gray;
+				font-size: 1rem;
+			}
+		}
+	}
+
+	&--is-disabled {
+		cursor: not-allowed;
+		pointer-events: none;
+		opacity: 0.5;
+
+		.btn--is-cyan {
+			background-color: lighten($color: $dark-gray, $amount: 25%);
+			color: $white;
+		}
+	}
+}

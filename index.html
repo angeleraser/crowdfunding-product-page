@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="./styles/styles.css" />
+
+		<title>Frontend Mentor | Crowdfunding product page</title>
+	</head>
+
+	<body>
+		<div id="app">
+			<!-- Header -->
+			<header class="header full-width">
+				<nav class="header__nav container-fluid">
+					<!-- App logo -->
+					<a
+						href="https://angeleraser.vercel.app"
+						class="header__nav__app-logo"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<img src="./images/logo.svg" alt="Crowdfunding logo" />
+					</a>
+
+					<!-- Burger Button -->
+					<button id="burger-btn" class="header__nav__burger-btn">
+						<span aria-label="burger button line"></span>
+					</button>
+
+					<div
+						id="menu"
+						class="header__nav__menu-overlay is-closed display-none full-width"
+					>
+						<ul
+							class="
+								header__nav__menu
+								font-commisioner
+								container-fluid
+								white-box
+							"
+						>
+							<li class="header__nav__menu__item">
+								<a href="#" rel="noopener noreferrer">About</a>
+							</li>
+							<li class="header__nav__menu__item">
+								<a href="#" rel="noopener noreferrer"> Get Started </a>
+							</li>
+							<li class="header__nav__menu__item">
+								<a href="#" rel="noopener noreferrer">Discover</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+
+			<!-- Main -->
+			<main class="main full-width font-commisioner">
+				<!-- Mastercraft header  -->
+				<section
+					class="
+						main__mastercraft-header
+						white-box white-box--outlined
+						container-fluid
+						section-padding
+					"
+				>
+					<img
+						class="main__mastercraft-header__logo"
+						src="./images/logo-mastercraft.svg"
+						alt="Mastercraft logo"
+					/>
+
+					<h1 class="main__mastercraft-header__title">
+						Mastercraft Bamboo Monitor Raiser
+					</h1>
+
+					<p class="main__mastercraft-header__description">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Perspiciatis modi maxime asperiores voluptatum veniam aut odit
+						aliquid sit placeat minima.
+					</p>
+
+					<div class="main__mastercraft-header__actions full-width">
+						<button id="back-project-btn" class="btn--is-cyan btn--rounded btn">
+							Back this project
+						</button>
+
+						<div id="bookmark-btn" class="bookmark-btn">
+							<button class="btn--is-black btn--full-rounded btn icon-btn">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									height="24px"
+									viewBox="0 0 24 24"
+									width="24px"
+									fill="#fff"
+								>
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path
+										d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
+									/>
+								</svg>
+							</button>
+
+							<button class="btn btn--rounded btn--is-light-gray text-btn">
+								Bookmark
+							</button>
+						</div>
+					</div>
+				</section>
+
+				<!-- Backed state -->
+				<section
+					class="
+						main__backed-state
+						white-box white-box--outlined
+						section-padding
+						container-fluid
+					"
+				>
+					<div class="main__backed-state__counter full-width">
+						<div class="main__backed-state__counter__item">
+							<h3>$89,897</h3>
+							<p>of $100,000 backed</p>
+						</div>
+
+						<div class="main__backed-state__counter__item">
+							<h3>$5,007</h3>
+							<p>total backers</p>
+						</div>
+
+						<div class="main__backed-state__counter__item">
+							<h3>57</h3>
+							<p>days left</p>
+						</div>
+					</div>
+
+					<div class="main__backed-state__progressbar-container full-width">
+						<div
+							class="
+								main__backed-state__progressbar-container__progressbar
+								full-width
+							"
+						>
+							<span
+								class="
+									main__backed-state__progressbar-container__progressbar__line
+								"
+							></span>
+						</div>
+					</div>
+				</section>
+
+				<!-- About this project -->
+				<section
+					class="
+						main__about
+						white-box white-box--outlined
+						font-commisioner
+						section-padding
+						container-fluid
+					"
+				>
+					<h2 class="main__about__heading">About this project</h2>
+
+					<p class="main__about__paragraph">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
+						iste magni quia cumque omnis ducimus nobis soluta, laboriosam
+						consequatur, illum accusamus, quidem sed velit repellendus vitae.
+						Quam corporis dignissimos ex!
+					</p>
+
+					<p class="main__about__paragraph">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
+						iste magni quia cumque omnis ducimus nobis soluta, laboriosam
+						consequatur, illum accusamus, quidem sed velit repellendus vitae.
+						Quam corporis dignissimos ex!
+					</p>
+
+					<div
+						id="reward-packages-list"
+						class="main__about__reward-packages-list full-width"
+					>
+						<article class="reward-package reward-package--is-disabled">
+							<div class="reward-package__header">
+								<h3>Bamboo Stand</h3>
+								<span>Pledge $25 or more</span>
+							</div>
+
+							<p class="reward-package__description">
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
+								iste quae placeat deleniti similique animi quasi sed dicta,
+								neque aperiam alias commodi sunt? Ad nostrum obcaecati eaque,
+								libero quis voluptate?
+							</p>
+
+							<div class="reward-package__actions">
+								<div class="reward-package__actions__reward-remaining">
+									<div class="reward-package__actions__reward-remaining__count">
+										101
+									</div>
+
+									<span
+										class="
+											reward-package__actions__reward-remaining__helper-text
+										"
+										>left</span
+									>
+								</div>
+								<button class="btn--is-cyan btn--rounded btn">
+									Select reward
+								</button>
+							</div>
+						</article>
+					</div>
+				</section>
+			</main>
+
+			<!-- <div class="dialog dialog--is-open success-backed-dialog">
+				<div class="dialog__overlay">
+					<div class="dialog__overlay__body">
+						<div
+							class="dialog__overlay__body__layout white-box section-padding"
+						>
+							<button class="dialog__overlay__body__close-btn">
+								<svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+										fill-rule="evenodd"
+									/>
+								</svg>
+							</button>
+							<div
+								class="
+									dialog__overlay__body__layout__content
+									success-backed-dialog__content
+								"
+							>
+								<div class="success-backed-dialog__icon">
+									<svg
+										width="64"
+										height="64"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g fill="none" fill-rule="evenodd">
+											<circle fill="#3CB3AB" cx="32" cy="32" r="32" />
+											<path
+												stroke="#FFF"
+												stroke-width="5"
+												d="M20 31.86L28.093 40 44 24"
+											/>
+										</g>
+									</svg>
+
+									<div class="radial-bg"></div>
+								</div>
+
+								<div class="success-backed-dialog__title">
+									Thanks for your support!
+								</div>
+
+								<div class="success-backed-dialog__message">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Facere minus dolores amet quos nesciunt beatae, placeat
+									blanditiis sunt nisi libero dolore ut sint tempora tempore
+									quae assumenda nemo itaque aperiam.
+								</div>
+
+								<button class="btn btn--rounded btn--is-cyan">Got it</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+
+		<script type="module" src="./js/index.js"></script>
+	</body>
+</html>

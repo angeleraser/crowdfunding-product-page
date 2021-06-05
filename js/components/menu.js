@@ -27,4 +27,6 @@ function handleBurgerBtnClick() {
 
 export default function () {
 	burgerBtn.addEventListener('click', handleBurgerBtnClick);
+document.body.classList.toggle("no-scroll")
 }
+

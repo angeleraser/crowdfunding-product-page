@@ -6,12 +6,14 @@ let isMenuClosed = true;
 
 function toggleMenu() {
 	if (!isMenuClosed) {
-		menuEl.classList.remove('is-active');
+
+	document.body.classList.remove("no-scroll")	menuEl.classList.remove('is-active');
 		menuEl.classList.add('is-closed');
 		delay(() => {
 			menuEl.classList.add('display-none');
 		}, 300);
 	} else {
+document.body.classList.add("no-scroll")
 		menuEl.classList.add('is-active');
 		menuEl.classList.remove('is-closed');
 		menuEl.classList.remove('display-none');
@@ -27,6 +29,5 @@ function handleBurgerBtnClick() {
 
 export default function () {
 	burgerBtn.addEventListener('click', handleBurgerBtnClick);
-document.body.classList.toggle("no-scroll")
 }
 

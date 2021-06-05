@@ -7,13 +7,14 @@ let isMenuClosed = true;
 function toggleMenu() {
 	if (!isMenuClosed) {
 
-	document.body.classList.remove("no-scroll")	menuEl.classList.remove('is-active');
+	        document.body.classList.remove("no-scroll");	
+                menuEl.classList.remove('is-active');
 		menuEl.classList.add('is-closed');
 		delay(() => {
 			menuEl.classList.add('display-none');
 		}, 300);
 	} else {
-document.body.classList.add("no-scroll")
+                document.body.classList.add("no-scroll");
 		menuEl.classList.add('is-active');
 		menuEl.classList.remove('is-closed');
 		menuEl.classList.remove('display-none');
